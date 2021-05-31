@@ -24,8 +24,7 @@ namespace EFCore.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FinancialsRevenueId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Fid = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: true),
-                    PriceType = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: true)
+                    Fid = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: true)
                 },
                 constraints: table =>
                 {

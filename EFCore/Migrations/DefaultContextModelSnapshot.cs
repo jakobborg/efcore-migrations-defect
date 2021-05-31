@@ -19,7 +19,7 @@ namespace EFCore.Migrations
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("EFCoreDefects.Model.FinancialsRevenue", b =>
+            modelBuilder.Entity("EFCore.Model.FinancialsRevenue", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -29,7 +29,7 @@ namespace EFCore.Migrations
                     b.ToTable("FinancialsRevenue");
                 });
 
-            modelBuilder.Entity("EFCoreDefects.Model.PowerPurchaseAgreement", b =>
+            modelBuilder.Entity("EFCore.Model.PowerPurchaseAgreement", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -44,15 +44,15 @@ namespace EFCore.Migrations
                     b.ToTable("PowerPurchaseAgreement");
                 });
 
-            modelBuilder.Entity("EFCoreDefects.Model.PowerPurchaseAgreement", b =>
+            modelBuilder.Entity("EFCore.Model.PowerPurchaseAgreement", b =>
                 {
-                    b.HasOne("EFCoreDefects.Model.FinancialsRevenue", null)
+                    b.HasOne("EFCore.Model.FinancialsRevenue", null)
                         .WithMany("PowerPurchaseAgreements")
                         .HasForeignKey("FinancialsRevenueId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.OwnsOne("EFCoreDefects.Model.Fid", "Fid", b1 =>
+                    b.OwnsOne("EFCore.Model.Fid", "Fid", b1 =>
                         {
                             b1.Property<Guid>("PowerPurchaseAgreementId")
                                 .HasColumnType("uniqueidentifier");
@@ -70,30 +70,10 @@ namespace EFCore.Migrations
                                 .HasForeignKey("PowerPurchaseAgreementId");
                         });
 
-                    b.OwnsOne("EFCoreDefects.Model.PriceType", "PriceType", b1 =>
-                        {
-                            b1.Property<Guid>("PowerPurchaseAgreementId")
-                                .HasColumnType("uniqueidentifier");
-
-                            b1.Property<string>("Value")
-                                .HasMaxLength(8)
-                                .HasColumnType("nvarchar(8)")
-                                .HasColumnName("PriceType");
-
-                            b1.HasKey("PowerPurchaseAgreementId");
-
-                            b1.ToTable("PowerPurchaseAgreement");
-
-                            b1.WithOwner()
-                                .HasForeignKey("PowerPurchaseAgreementId");
-                        });
-
                     b.Navigation("Fid");
-
-                    b.Navigation("PriceType");
                 });
 
-            modelBuilder.Entity("EFCoreDefects.Model.FinancialsRevenue", b =>
+            modelBuilder.Entity("EFCore.Model.FinancialsRevenue", b =>
                 {
                     b.Navigation("PowerPurchaseAgreements");
                 });

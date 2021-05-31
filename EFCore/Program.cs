@@ -26,14 +26,12 @@ namespace EFCore
                 new PowerPurchaseAgreement()
                 {
                     Fid = Fid.Post,
-                    PriceType = PriceType.Fixed
                 });
 
             financialsRevenue.PowerPurchaseAgreements.Add(
                 new PowerPurchaseAgreement()
                 {
                     Fid = Fid.Post,
-                    PriceType = PriceType.Fixed
                 });
 
             context.FinancialsRevenue.Add(financialsRevenue);

@@ -9,7 +9,5 @@ namespace EFCore.Model
         public Guid FinancialsRevenueId { get; private set; }
 
         public Fid Fid { get; set; }
-
-        public PriceType PriceType { get; set; }
     }
 }

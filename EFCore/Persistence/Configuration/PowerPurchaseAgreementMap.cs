@@ -17,11 +17,6 @@ namespace EFCore.Persistence.Configuration
             {
                 fid.Property(x => x.Value).HasMaxLength(8).HasColumnName("Fid");
             });
-
-            builder.OwnsOne(x => x.PriceType, priceType =>
-            {
-                priceType.Property(x => x.Value).HasMaxLength(8).HasColumnName("PriceType");
-            });
         }
     }
 }
