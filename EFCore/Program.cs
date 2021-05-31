@@ -19,23 +19,6 @@ namespace EFCore
 
             context.Database.EnsureDeleted();
             context.Database.Migrate();
-
-            var financialsRevenue = new FinancialsRevenue();
-
-            financialsRevenue.PowerPurchaseAgreements.Add(
-                new PowerPurchaseAgreement()
-                {
-                    Fid = Fid.Post,
-                });
-
-            financialsRevenue.PowerPurchaseAgreements.Add(
-                new PowerPurchaseAgreement()
-                {
-                    Fid = Fid.Post,
-                });
-
-            context.FinancialsRevenue.Add(financialsRevenue);
-            context.SaveChanges();
         }
 
         private static DefaultContext GetContext()

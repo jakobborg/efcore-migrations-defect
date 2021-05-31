@@ -6,7 +6,7 @@ namespace EFCore.Persistence
 {
     public class DefaultContext : DbContext
     {
-        public DbSet<FinancialsRevenue> FinancialsRevenue { get; set; }
+        public DbSet<Bid> Bid { get; set; }
 
         public DefaultContext(DbContextOptions<DefaultContext> options)
             : base(options)
@@ -15,8 +15,7 @@ namespace EFCore.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new FinancialsRevenueMap());
-            modelBuilder.ApplyConfiguration(new PowerPurchaseAgreementMap());
+            modelBuilder.ApplyConfiguration(new BidMap());
         }
     }
 }
